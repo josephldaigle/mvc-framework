@@ -21,6 +21,4 @@ $container->setParameter('app.name', 'Application Name');
  * Return the contianer.
  */
 $container->compile();
-
-//var_dump($container);
 return $container;
