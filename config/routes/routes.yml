@@ -1,2 +1,11 @@
-## YAML Template.
----
+# routes.yml
+
+# This file contains url route definitions.
+# See http://symfony.com/doc/3.2/components/routing.html
+
+
+# Routes must be configured in order for the application to work.
+route1:
+    path:     foo
+    defaults: 
+        _controller: 'Gordon\MVC\Controller\ExampleController::indexAction'
