@@ -1,2 +1,19 @@
-## YAML Template.
----
+# This file contains the application's configuration.
+
+#----------------------
+# APPLICATION
+#----------------------
+app.name: "gscweb-mvc-framework"
+app.lang: "en"
+
+
+
+#----------------------
+# SERVICES
+#----------------------
+
+
+
+#----------------------
+# ROUTING
+#----------------------
