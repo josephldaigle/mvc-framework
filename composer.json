@@ -1,0 +1,12 @@
+{
+    "name": "gscweb/mvc-framework",
+    "description": "A light-weight framework for building web sites that implements the MVC architectural pattern, utilizing Symfony (www.symfony.com) components.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Joe Daigle",
+            "email": "joed@gordonstate.edu"
+        }
+    ],
+    "require": {}
+}
