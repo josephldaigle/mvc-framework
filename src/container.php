@@ -6,6 +6,9 @@
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\Config\FileLocator;
+
 /**
  * Create the container.
  */
@@ -14,15 +17,13 @@ $container = new ContainerBuilder();
 /**
  * Configure the container.
  */
+$loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/config'));
 
-// Register mailer
-$container->register('gsc.mailer', PHPMailer::class)
-        ->addMethodCall('isSMTP')
-        ->addMethodCall('isHtml', array(true))
-        ->addMethodCall('setFrom', array('noreply@gordonstate.edu', 'Gordon State College'))
-        ->setProperty('Host', 'condor.gordonstate.edu');
-        
-$container->setParameter('gsc.app.config', Yaml::parse(file_get_contents(HOME_DIR . '/config/services/mailer.yml')));
+//load application configuration
+$container->setParameter('gsc.config', Yaml::parse(file_get_contents(HOME_DIR . '/config/application.yml')));
+
+//load services
+$loader->load('services.yml');
 
 
 $container->register('gsc.framework', Gordon\MVC\Framework::class)
