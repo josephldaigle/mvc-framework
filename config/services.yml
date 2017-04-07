@@ -1,18 +1,6 @@
-parameters:
-    #define service parameters
-    mailer.host: "condor.gordonstate.edu"
-    mailer.from_address: "noreply@gordonstate.edu"
-    mailer.from_name: "Gordon State College"
-    mailer.reply_to_address: "noreply@gordonstate.edu"
-    mailer.reply_to_name: "Do Not Reply"
-services:
-    #define service configurations
-    gsc.mailer:
-        class:     PHPMailer
-        properties:
-            Host: '%mailer.host%'
-        calls:
-            - [isSMTP]
-            - [isHTML, [true]]
-            - [setFrom, ['%mailer.from_address%', '%mailer.from_name%']]
-            - [addReplyTo, ['%mailer.reply_to_address%', '%mailer.reply_to_name%']]
+# This file contains service configuration imports.
+# To add a service configuration, create the .yml file in the /services
+# directory, and add the import below.
+
+imports: 
+    - { resource: services/mailer.yml }
