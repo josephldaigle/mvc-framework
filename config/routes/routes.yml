@@ -6,6 +6,6 @@
 
 # Routes must be configured in order for the application to work.
 route1:
-    path:     foo
+    path: foo
     defaults: 
-        _controller: 'Gordon\MVC\Controller\ExampleController::indexAction'
+            _controller: 'Gordon\MVC\Controller\ExampleController::indexAction'
