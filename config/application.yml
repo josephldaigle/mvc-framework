@@ -7,10 +7,11 @@ app.name: "gscweb-mvc-framework"
 app.lang: "en"
 
 
-
 #----------------------
 # SERVICES
 #----------------------
+services: "config/services.yml"
+
 
 
 
